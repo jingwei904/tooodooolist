@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo 2', cursive;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #52d11f, #16bc9b);
+    padding: 10px;
+}
+.todo-list{
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 10px;
+    border-radius: 30px;
+    border: 5px solid;
+    border-color: #473e3e;
+}
+.todo-list h1{
+    color: #158e07;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    cursor: default;
+}
+.todo-list h1 img{
+    width: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.todo-list h1:hover{
+    animation: shake 0.8s ease-in-out;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #e5e5e1;
+    border: 2px dashed #7f827d50;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight : 14px;
+}
+button{
+    border: 5px solid #fc442f;
+    outline: none;
+    padding: 16px 40px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+button:hover{
+    background: #ff6d5d;
+    border-color: #ff614f;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s ease;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url("uncheck.png");
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url("check.png");
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #000000;
+    line-height: 40px;
+    text-align: center;
+    align-items: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: #e5e5e576;
+}
+ul li.appear-init{
+    opacity: 0;
+    transform : scale(0);
+}
+ul li.appear{
+    opacity: 1;
+    margin: 12px 0;
+    padding: 12px 8px 12px 50px;
+    transform: scale(1);
+}
+ul li.disappear{
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    transform : scale(0);
+}
+p{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+    color: #158e07;
+    font-family: 'Baloo 2', cursive;
+    cursor: default;
+}
+
+@keyframes shake {
+    0% {transform: translateX(0) rotate(0deg);}
+    25% {transform: translateX(-0.5px) rotate(-0.5deg);}
+    50% {transform: translateX(0.5px) rotate(0.5deg);}
+    75% {transform: translateX(-0.5px) rotate(-0.5deg);}
+    100% {transform: translateX(0) rotate(0deg);}
+}
